@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "37475786628",
+    "firebase_url": "https://fot-news-app-a0fd8-default-rtdb.firebaseio.com",
+    "project_id": "fot-news-app-a0fd8",
+    "storage_bucket": "fot-news-app-a0fd8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37475786628:android:5ac555f288aabd95dec7d1",
+        "android_client_info": {
+          "package_name": "lk.cmb.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoiCYuMzVFCkY1LgTal1Pc9hFuTApXnz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
