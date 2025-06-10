@@ -99,7 +99,7 @@ public class SignInScreen extends AppCompatActivity {
      * Navigate to the Sign-Up screen
      */
     private void navigateToSignUp() {
-        Intent intent = new Intent(SignInScreen.this, MainActivity.class);
+        Intent intent = new Intent(SignInScreen.this, SignUpScreen.class);
         startActivity(intent);
     }
 }
