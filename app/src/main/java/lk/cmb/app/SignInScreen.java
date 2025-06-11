@@ -85,7 +85,7 @@ public class SignInScreen extends AppCompatActivity {
                         Toast.makeText(SignInScreen.this, "Login successful!", Toast.LENGTH_SHORT).show();
 
                         // Go to next screen (replace MainActivity with your actual one)
-                        Intent intent = new Intent(SignInScreen.this, MainActivity.class);
+                        Intent intent = new Intent(SignInScreen.this, NewsScreen.class);
                         startActivity(intent);
                         finish();
                     } else {

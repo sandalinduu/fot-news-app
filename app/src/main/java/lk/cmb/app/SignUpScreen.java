@@ -99,7 +99,7 @@ public class SignUpScreen extends AppCompatActivity {
                                     .addOnCompleteListener(dbTask -> {
                                         if (dbTask.isSuccessful()) {
                                             Toast.makeText(SignUpScreen.this, "User registered successfully!", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(SignUpScreen.this, SignInScreen.class));
+                                            startActivity(new Intent(SignUpScreen.this, NewsScreen.class));
                                             finish();
                                         } else {
                                             Toast.makeText(SignUpScreen.this, "Database error: " + dbTask.getException().getMessage(), Toast.LENGTH_LONG).show();
