@@ -90,7 +90,7 @@ public class NewsScreen extends AppCompatActivity {
 
         // Top-left menu icon action
         menuIcon.setOnClickListener(v -> {
-            Intent intent = new Intent(NewsScreen.this, MainActivity.class);
+            Intent intent = new Intent(NewsScreen.this, OptionMenuScreen.class);
             startActivity(intent);
             Toast.makeText(NewsScreen.this, "Opening Menu...", Toast.LENGTH_SHORT).show();
         });

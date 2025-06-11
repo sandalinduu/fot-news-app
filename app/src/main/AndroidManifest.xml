@@ -12,33 +12,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
-        <!-- <meta-data -->
-        <!-- android:name="com.google.android.actions" -->
-        <!-- android:resource="@layout/bottom_nav_item_color" /> -->
+
         <activity
             android:name=".NewsScreen"
             android:exported="false" />
+
         <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SignInScreen"
             android:exported="false" />
+
         <activity
             android:name=".SignUpScreen"
             android:exported="false" />
+
         <activity
             android:name=".NewsIteam"
             android:exported="false" />
+
+        <!-- ✅ OptionMenuScreen with translucent theme -->
+        <activity
+            android:name=".OptionMenuScreen"
+            android:exported="false"
+            android:theme="@style/OptionMenuTheme" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
