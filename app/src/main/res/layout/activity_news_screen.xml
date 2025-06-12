@@ -14,26 +14,36 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="#262262"
-        app:titleTextColor="#FFFFFF"
-        app:subtitleTextColor="#DDDDDD"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="#DDDDDD"
+        app:titleTextColor="#FFFFFF">
 
         <ImageButton
             android:id="@+id/menu_icon"
-            android:layout_width="24dp"  android:layout_height="24dp" android:layout_gravity="start"
-            android:src="@drawable/menu" android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Open Menu"
-            app:tint="#FFFFFF"
-            android:padding="0dp" android:scaleType="fitCenter"/> <TextView
-        android:id="@+id/toolbar_title"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="Faculty News"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center" android:layout_marginEnd="56dp" /> </androidx.appcompat.widget.Toolbar>
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/menu"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="56dp"
+            android:gravity="center"
+            android:text="Faculty News"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/news_recycler_view"
