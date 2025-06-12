@@ -30,7 +30,7 @@ public class OptionMenuScreen extends AppCompatActivity {
 
         // Go to News Screen (Home)
         homeOption.setOnClickListener(v -> {
-            startActivity(new Intent(this, NewsScreen.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         });
 

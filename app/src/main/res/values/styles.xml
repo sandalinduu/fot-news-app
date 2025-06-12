@@ -1,6 +1,5 @@
 <resources>
-    <!-- Your other styles like Theme.App, etc. -->
-
+    <!--  Your other styles like Theme.App, etc.  -->
     <style name="OptionMenuTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -11,10 +10,8 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
-
     <style name="CustomDialog" parent="Theme.AppCompat.Dialog.Alert">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
-
 </resources>

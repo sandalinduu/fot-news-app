@@ -5,26 +5,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
-
 import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
-    private List<SignUpScreen.NewsItem> newsList;
+    private final List<NewsItem> newsItems;
 
-    public NewsAdapter(List<SignUpScreen.NewsItem> newsList) {
-        this.newsList = newsList;
-    }
-
-    public void updateNewsList(List<SignUpScreen.NewsItem> newNewsList) {
-        this.newsList.clear();
-        this.newsList.addAll(newNewsList);
-        notifyDataSetChanged();
+    public NewsAdapter(List<NewsItem> newsItems) {
+        this.newsItems = newsItems;
     }
 
     @NonNull
@@ -37,16 +28,17 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
-        SignUpScreen.NewsItem newsItem = newsList.get(position);
-        holder.newsTitle.setText(newsItem.getTitle());
-        holder.newsDescription.setText(newsItem.getDescription());
-        holder.newsDate.setText(newsItem.getDate());
+        NewsItem item = newsItems.get(position);
 
-        if (newsItem.getImageUrl() != null && !newsItem.getImageUrl().isEmpty()) {
+        holder.newsTitle.setText(item.getTitle());
+        holder.newsDescription.setText(item.getDescription());
+        holder.newsImageUrl.setText(item.getImageurl()); // Show the image URL as text
+
+        // Use Glide to load image from imageurl or show a placeholder if empty
+        if (item.getImageurl() != null && !item.getImageurl().isEmpty()) {
             Glide.with(holder.itemView.getContext())
-                    .load(newsItem.getImageUrl())
+                    .load(item.getImageurl())
                     .placeholder(R.drawable.placeholder_image)
-                    .error(R.drawable.placeholder_image)
                     .into(holder.newsImage);
         } else {
             holder.newsImage.setImageResource(R.drawable.placeholder_image);
@@ -55,19 +47,19 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     @Override
     public int getItemCount() {
-        return newsList.size();
+        return newsItems.size();
     }
 
-    public static class NewsViewHolder extends RecyclerView.ViewHolder {
+    static class NewsViewHolder extends RecyclerView.ViewHolder {
         ImageView newsImage;
-        TextView newsTitle, newsDescription, newsDate;
+        TextView newsTitle, newsDescription, newsImageUrl;
 
         public NewsViewHolder(@NonNull View itemView) {
             super(itemView);
             newsImage = itemView.findViewById(R.id.newsImage);
             newsTitle = itemView.findViewById(R.id.newsTitle);
             newsDescription = itemView.findViewById(R.id.newsDescription);
-//            newsDate = itemView.findViewById(R.id.newsDate);
+            newsImageUrl = itemView.findViewById(R.id.newsImageUrl);
         }
     }
 }

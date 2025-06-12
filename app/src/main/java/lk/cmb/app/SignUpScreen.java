@@ -1,6 +1,7 @@
 package lk.cmb.app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -97,8 +98,15 @@ public class SignUpScreen extends AppCompatActivity {
                                     .setValue(new User(username, email))
                                     .addOnCompleteListener(dbTask -> {
                                         if (dbTask.isSuccessful()) {
+                                            // Save email and password locally in SharedPreferences
+                                            SharedPreferences prefs = getSharedPreferences("user_prefs", MODE_PRIVATE);
+                                            prefs.edit()
+                                                    .putString("user_email", email)
+                                                    .putString("user_password", password) // Not recommended for production!
+                                                    .apply();
+
                                             Toast.makeText(SignUpScreen.this, "User registered successfully!", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(SignUpScreen.this, NewsScreen.class));
+                                            startActivity(new Intent(SignUpScreen.this, MainActivity.class));
                                             finish();
                                         } else {
                                             Toast.makeText(SignUpScreen.this, "Database error: " + dbTask.getException().getMessage(), Toast.LENGTH_LONG).show();

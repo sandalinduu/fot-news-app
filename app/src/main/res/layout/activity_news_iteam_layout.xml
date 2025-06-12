@@ -33,7 +33,6 @@
                 android:id="@+id/newsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Technology Day 2025 – Registrations Now Open"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -45,15 +44,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Tech Day 2025, the annual exhibition of the Faculty of Technology, is scheduled for May 20th. The event will showcase student projects, innovations, and research. All undergraduates are encouraged to participate and invite guests."
                 android:textColor="#666666"
                 android:textSize="14sp"
-                android:lineSpacingExtra="1dp"
                 android:maxLines="4"
                 android:ellipsize="end" />
 
+            <!-- News Image URL (displayed as text) -->
+            <TextView
+                android:id="@+id/newsImageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"/>
         </LinearLayout>
-
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

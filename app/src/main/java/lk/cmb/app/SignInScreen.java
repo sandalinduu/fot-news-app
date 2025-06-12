@@ -1,10 +1,10 @@
 package lk.cmb.app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,9 +16,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.WindowInsetsCompat;
 
-// 🔥 Firebase imports
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class SignInScreen extends AppCompatActivity {
 
@@ -27,7 +25,7 @@ public class SignInScreen extends AppCompatActivity {
     private Button loginButton;
     private TextView signUpLink;
 
-    // 🔥 Firebase Authentication instance
+    // Firebase Authentication instance
     private FirebaseAuth mAuth;
 
     @Override
@@ -42,24 +40,25 @@ public class SignInScreen extends AppCompatActivity {
             return insets;
         });
 
-        // 🔥 Initialize Firebase Auth
+        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        // UI element bindings (NOTE: ID is still usernameInput in XML, but we rename variable here for clarity)
+        // Bind UI elements
         emailInput = findViewById(R.id.usernameInput);
         passwordInput = findViewById(R.id.passwordInput);
         loginButton = findViewById(R.id.loginButton);
         signUpLink = findViewById(R.id.signUpLink);
 
+        // Set password input type to password style
         passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
 
+        // Set click listeners
         loginButton.setOnClickListener(v -> attemptLogin());
-
         signUpLink.setOnClickListener(v -> navigateToSignUp());
     }
 
     /**
-     * 🔐 Authenticate user using Firebase
+     * Authenticate user using Firebase and save email locally (no dependencies)
      */
     private void attemptLogin() {
         String email = emailInput.getText().toString().trim();
@@ -77,19 +76,23 @@ public class SignInScreen extends AppCompatActivity {
             return;
         }
 
-        // 🔥 Sign in with Firebase
+        // Sign in with Firebase Authentication
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
+                        // Save email to SharedPreferences (private to your app)
+                        SharedPreferences prefs = getSharedPreferences("user_prefs", MODE_PRIVATE);
+                        prefs.edit().putString("user_email", email).apply();
+
                         Toast.makeText(SignInScreen.this, "Login successful!", Toast.LENGTH_SHORT).show();
 
-                        // Go to next screen (replace MainActivity with your actual one)
-                        Intent intent = new Intent(SignInScreen.this, NewsScreen.class);
+                        // Navigate to NewsScreen
+                        Intent intent = new Intent(SignInScreen.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(SignInScreen.this, "Authentication failed: " + task.getException().getMessage(),
+                        Toast.makeText(SignInScreen.this,
+                                "Authentication failed: " + task.getException().getMessage(),
                                 Toast.LENGTH_LONG).show();
                     }
                 });
