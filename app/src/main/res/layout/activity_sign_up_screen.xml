@@ -106,37 +106,39 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Sign Up Button -->
-    <Button
-        android:id="@+id/signUpButton"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Sign Up"
-        android:backgroundTint="#262262"
-        android:textColor="#27AAE1"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintTop_toBottomOf="@id/confirmPasswordInput"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Already have account link -->
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="261dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#262262"
+        android:fontFamily="sans-serif-medium"
+        android:text="Sign Up"
+        android:textColor="#27AAE1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirmPasswordInput" />
+
     <TextView
         android:id="@+id/signInLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Already have an account? Sign In"
-        android:textColor="#FFFFFF"
-        android:textStyle="italic"
-        android:textSize="14sp"
+        android:layout_width="205dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/signUpButton"
+        android:text="Already have an account? Sign In"
+        android:textColor="#262262 "
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/signUpButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

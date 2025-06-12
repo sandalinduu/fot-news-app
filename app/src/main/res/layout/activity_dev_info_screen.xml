@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#392C74">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DEVELOPER INFO"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Circular Profile Image -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImage"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Developer Profile Image"
+        app:shapeAppearanceOverlay="@style/CircleImageView"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/devinfo" />
+
+    <!-- Name -->
+    <TextView
+        android:id="@+id/devName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='Name: '
+        android:textColor="#B0AFCB"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/devNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M.P.S.S.Gunarathna"
+        android:textStyle="italic|bold"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/devName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Student No -->
+    <TextView
+        android:id="@+id/devId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student no: "
+        android:textColor="#B0AFCB"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/devNameValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/devIdValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2022t01532"
+        android:textStyle="italic|bold"
+        android:textColor="#27AAE1"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/devId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Personal Statement -->
+    <TextView
+        android:id="@+id/personalStatementLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personal statement:"
+        android:textColor="#B0AFCB"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/devIdValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/personalStatement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="“I'm passionate about\nbuilding useful apps\nthat help students stay connected.”"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="italic|bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/personalStatementLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"/>
+
+    <!-- Release Version -->
+    <TextView
+        android:id="@+id/appVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Release version:"
+        android:textColor="#B0AFCB"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/personalStatement"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/appVersionValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v1.0.0"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="italic|bold"
+        app:layout_constraintTop_toBottomOf="@id/appVersion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Exit Button -->
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="Exit"
+        android:textSize="18sp"
+        android:textColor="#392C74"
+        android:backgroundTint="#B0AFCB"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_button"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

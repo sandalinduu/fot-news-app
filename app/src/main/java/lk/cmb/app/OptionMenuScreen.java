@@ -90,7 +90,7 @@ public class OptionMenuScreen extends AppCompatActivity {
 
         devInfoOption.setOnClickListener(v -> {
 
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, DevInfoScreen.class));
 
         });
 

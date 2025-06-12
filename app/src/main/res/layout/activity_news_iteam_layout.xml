@@ -1,56 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    card_view:cardCornerRadius="12dp"
-    card_view:cardElevation="4dp">
+    android:layout_margin="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp"
+    android:background="@android:color/white">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:background="#FFFFFF">
+        android:orientation="vertical">
 
+        <!-- News Image -->
         <ImageView
             android:id="@+id/newsImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:contentDescription="News Image"
-            /> <TextView
-        android:id="@+id/newsTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/newsImage"
-        android:layout_marginStart="8dp"
-        android:text="News Title"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="16sp" />
+            android:src="@drawable/placeholder_image" />
 
-        <TextView
-            android:id="@+id/newsDate"
+        <!-- News Content -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/newsTitle"
-            android:layout_toEndOf="@id/newsImage"
-            android:layout_marginStart="8dp"
-            android:text="2024-06-01"
-            android:textColor="#888888"
-            android:textSize="12sp" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/newsDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/newsDate"
-            android:layout_toEndOf="@id/newsImage"
-            android:layout_marginStart="8dp"
-            android:text="This is a short description of the news."
-            android:textColor="#333333"
-            android:textSize="14sp" />
-    </RelativeLayout>
+            <!-- News Title -->
+            <TextView
+                android:id="@+id/newsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Technology Day 2025 – Registrations Now Open"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="2dp" />
+
+            <!-- News Description -->
+            <TextView
+                android:id="@+id/newsDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tech Day 2025, the annual exhibition of the Faculty of Technology, is scheduled for May 20th. The event will showcase student projects, innovations, and research. All undergraduates are encouraged to participate and invite guests."
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:lineSpacingExtra="1dp"
+                android:maxLines="4"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.cardview.widget.CardView>

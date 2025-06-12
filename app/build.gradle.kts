@@ -51,4 +51,5 @@ dependencies {
     // ADD THIS LINE FOR EdgeToEdge, ViewCompat, Insets, WindowInsetsCompat
     implementation("androidx.core:core-ktx:1.13.1") // Use the latest stable version
     // You can check for latest at https://developer.android.com/jetpack/androidx/releases/core
+
 }

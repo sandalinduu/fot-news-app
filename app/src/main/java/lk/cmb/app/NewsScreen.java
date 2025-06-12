@@ -2,7 +2,6 @@ package lk.cmb.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +29,7 @@ public class NewsScreen extends AppCompatActivity {
 
     private RecyclerView newsRecyclerView;
     private NewsAdapter newsAdapter;
-    private List<lk.cmb.app.NewsItem> newsList;
+    private List<SignUpScreen.NewsItem> newsList;
     private BottomNavigationView bottomNavigationView;
     private ImageButton menuIcon;
     private TextView toolbarTitle;
@@ -113,7 +112,7 @@ public class NewsScreen extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for (DataSnapshot data : snapshot.getChildren()) {
-                        lk.cmb.app.NewsItem item = data.getValue(lk.cmb.app.NewsItem.class);
+                        SignUpScreen.NewsItem item = data.getValue(SignUpScreen.NewsItem.class);
                         if (item != null) {
                             newsList.add(item);
                         }
@@ -141,7 +140,7 @@ public class NewsScreen extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 newsList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    lk.cmb.app.NewsItem newsItem = snapshot.getValue(lk.cmb.app.NewsItem.class);
+                    SignUpScreen.NewsItem newsItem = snapshot.getValue(SignUpScreen.NewsItem.class);
                     if (newsItem != null) {
                         newsList.add(newsItem);
                     }
