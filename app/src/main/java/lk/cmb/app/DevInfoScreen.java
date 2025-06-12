@@ -18,7 +18,7 @@ public class DevInfoScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Intent to start DevInfoActivity
-                Intent intent = new Intent(DevInfoScreen.this, NewsScreen.class);
+                Intent intent = new Intent(DevInfoScreen.this, MainActivity.class);
                 startActivity(intent);
                 // Optional: finish current activity if you don't want to keep it in back stack
                 // finish();
