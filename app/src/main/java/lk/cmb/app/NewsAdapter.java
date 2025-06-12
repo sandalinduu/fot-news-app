@@ -15,13 +15,13 @@ import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
-    private List<lk.cmb.app.NewsItem> newsList;
+    private List<SignUpScreen.NewsItem> newsList;
 
-    public NewsAdapter(List<lk.cmb.app.NewsItem> newsList) {
+    public NewsAdapter(List<SignUpScreen.NewsItem> newsList) {
         this.newsList = newsList;
     }
 
-    public void updateNewsList(List<lk.cmb.app.NewsItem> newNewsList) {
+    public void updateNewsList(List<SignUpScreen.NewsItem> newNewsList) {
         this.newsList.clear();
         this.newsList.addAll(newNewsList);
         notifyDataSetChanged();
@@ -37,7 +37,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
-        lk.cmb.app.NewsItem newsItem = newsList.get(position);
+        SignUpScreen.NewsItem newsItem = newsList.get(position);
         holder.newsTitle.setText(newsItem.getTitle());
         holder.newsDescription.setText(newsItem.getDescription());
         holder.newsDate.setText(newsItem.getDate());
@@ -67,7 +67,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             newsImage = itemView.findViewById(R.id.newsImage);
             newsTitle = itemView.findViewById(R.id.newsTitle);
             newsDescription = itemView.findViewById(R.id.newsDescription);
-            newsDate = itemView.findViewById(R.id.newsDate);
+//            newsDate = itemView.findViewById(R.id.newsDate);
         }
     }
 }

@@ -3,7 +3,6 @@ package lk.cmb.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -125,5 +124,29 @@ public class SignUpScreen extends AppCompatActivity {
             this.username = username;
             this.email = email;
         }
+    }
+
+    public static class NewsItem {
+        public String title;
+        public String description;
+        public String date;
+        public String imageUrl; // Optional, can be null
+
+        public NewsItem() {
+            // Default constructor required for calls to DataSnapshot.getValue(NewsItem.class)
+        }
+
+        public NewsItem(String title, String description, String date, String imageUrl) {
+            this.title = title;
+            this.description = description;
+            this.date = date;
+            this.imageUrl = imageUrl;
+        }
+
+        // Getter methods
+        public String getTitle() { return title; }
+        public String getDescription() { return description; }
+        public String getDate() { return date; }
+        public String getImageUrl() { return imageUrl; }
     }
 }
